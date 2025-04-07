@@ -44,6 +44,8 @@ class Bandit:
 
     def reset(self):
         # real reward for each action
+        ###Aqui sencillamente lo que hacen es inicializar los q_i's igual que en la
+        ###figura 2.1 del libro, tienen promedio 0 y varianza 1.
         self.q_true = np.random.randn(self.k) + self.true_reward
 
         # estimation for each action
@@ -71,7 +73,8 @@ class Bandit:
             exp_est = np.exp(self.q_estimation)
             self.action_prob = exp_est / np.sum(exp_est)
             return np.random.choice(self.indices, p=self.action_prob)
-
+###Aqui devuelve una accion aleatoria dentro de las que tienen mejor estimacion hasta el
+###momento. 
         q_best = np.max(self.q_estimation)
         return np.random.choice(np.where(self.q_estimation == q_best)[0])
 
@@ -123,9 +126,9 @@ def simulate(runs, time, bandits):
 def exercise_2_5_figure_e_2_5(runs=2000, time=10000):
     bandits = []
     bandits.append(Bandit(epsilon=0.1, step_size=0.1))
-    bandits.append(Bandit(epsilon=0.1, sample_averages=True))
+    ###bandits.append(Bandit(epsilon=0.1, sample_averages=True))
     bandits.append(Bandit(epsilon=0.1, step_size=0.1, random_walk=True))
-    bandits.append(Bandit(epsilon=0.1, sample_averages=True, random_walk=True))
+    ###bandits.append(Bandit(epsilon=0.1, sample_averages=True, random_walk=True))
     best_action_counts, average_rewards = simulate(runs, time, bandits)
     # rewards = np.mean(average_rewards, axis=1)
 
@@ -133,18 +136,18 @@ def exercise_2_5_figure_e_2_5(runs=2000, time=10000):
 
     plt.subplot(2, 1, 1)
     plt.plot(average_rewards[0], label='$\\alpha = 0.1$')
-    plt.plot(average_rewards[1], label='Sample averages')
-    plt.plot(average_rewards[2], label='$\\alpha = 0.1$ Random walk')
-    plt.plot(average_rewards[3], label='Sample averages Random walk')
+    ###plt.plot(average_rewards[1], label='Sample averages')
+    plt.plot(average_rewards[1], label='$\\alpha = 0.1$ Random walk')
+    ###plt.plot(average_rewards[3], label='Sample averages Random walk')
     plt.xlabel('steps')
     plt.ylabel('average reward')
     plt.legend()
 
     plt.subplot(2, 1, 2)
     plt.plot(best_action_counts[0], label='$\\alpha = 0.1$')
-    plt.plot(best_action_counts[1], label='Sample averages')
-    plt.plot(best_action_counts[2], label='$\\alpha = 0.1$ Random walk')
-    plt.plot(best_action_counts[3], label='Sample averages Random walk')
+    ###plt.plot(best_action_counts[1], label='Sample averages')
+    plt.plot(best_action_counts[1], label='$\\alpha = 0.1$ Random walk')
+    ###plt.plot(best_action_counts[3], label='Sample averages Random walk')
     plt.xlabel('steps')
     plt.ylabel('% optimal action')
     plt.legend()
@@ -163,12 +166,12 @@ def exercise_2_11_figure_e_2_11(runs=2000, time=1000):
                   lambda coef: Bandit(epsilon=0, UCB_param=coef, sample_averages=True, random_walk=True),
                   lambda initial: Bandit(epsilon=0, initial=initial, step_size=0.1, random_walk=True)]
 
-    parameters = [np.arange(-7, -1, dtype=np.float),
-                  np.arange(-7, -1, dtype=np.float),
-                  np.arange(-7, -1, dtype=np.float),
-                  np.arange(-5, 2, dtype=np.float),
-                  np.arange(-4, 3, dtype=np.float),
-                  np.arange(-2, 3, dtype=np.float)]
+    parameters = [np.arange(-7, -1, dtype=float),
+                  np.arange(-7, -1, dtype=float),
+                  np.arange(-7, -1, dtype=float),
+                  np.arange(-5, 2, dtype=float),
+                  np.arange(-4, 3, dtype=float),
+                  np.arange(-2, 3, dtype=float)]
 
     bandits = []
     for generator, parameter in zip(generators, parameters):
@@ -193,5 +196,5 @@ def exercise_2_11_figure_e_2_11(runs=2000, time=1000):
 
 if __name__ == '__main__':
 
-    # exercise_2_5_figure_e_2_5()
-    exercise_2_11_figure_e_2_11()
+    exercise_2_5_figure_e_2_5()
+    #exercise_2_11_figure_e_2_11()
