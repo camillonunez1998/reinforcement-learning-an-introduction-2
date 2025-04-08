@@ -9,6 +9,7 @@
 #######################################################################
 # Modified to include solution to programming exercises in Sutton&Barto 2018 edition.
 
+import pdb
 import matplotlib
 import matplotlib.pyplot as plt
 import numpy as np
@@ -123,7 +124,7 @@ def simulate(runs, time, bandits):
     mean_rewards = rewards.mean(axis=1)
     return mean_best_action_counts, mean_rewards
 
-def exercise_2_5_figure_e_2_5(runs=2000, time=10000):
+def exercise_2_5_figure_e_2_5(runs=1, time=10000):
     bandits = []
     bandits.append(Bandit(epsilon=0.1, step_size=0.1))
     ###bandits.append(Bandit(epsilon=0.1, sample_averages=True))
