@@ -57,6 +57,9 @@ class Bandit:
 
         self.best_action = np.argmax(self.q_true)
 
+        ###Asignamos a self.best_action un vector conteniendo las mejores acciones
+        self.best_action = np.where(self.q_true == np.max(self.q_true))[0]
+
         self.time = 0
 
     # get an action for this bandit
@@ -104,6 +107,7 @@ class Bandit:
 
         if self.random_walk:
             self.q_true = np.add(self.q_true, np.random.normal(0, 0.01, self.k))
+            self.best_action = np.where(self.q_true == np.max(self.q_true))[0]
 
         return reward
 
@@ -118,37 +122,38 @@ def simulate(runs, time, bandits):
                 action = bandit.act()
                 reward = bandit.step(action)
                 rewards[i, r, t] = reward
-                if action == bandit.best_action:
+                if action in bandit.best_action:
                     best_action_counts[i, r, t] = 1
     mean_best_action_counts = best_action_counts.mean(axis=1)
     mean_rewards = rewards.mean(axis=1)
     return mean_best_action_counts, mean_rewards
 
-def exercise_2_5_figure_e_2_5(runs=1, time=10000):
+def exercise_2_5_figure_e_2_5(runs=2000, time=10000):
     bandits = []
     bandits.append(Bandit(epsilon=0.1, step_size=0.1))
-    ###bandits.append(Bandit(epsilon=0.1, sample_averages=True))
+    bandits.append(Bandit(epsilon=0.1, sample_averages=True))
     bandits.append(Bandit(epsilon=0.1, step_size=0.1, random_walk=True))
-    ###bandits.append(Bandit(epsilon=0.1, sample_averages=True, random_walk=True))
+    bandits.append(Bandit(epsilon=0.1, sample_averages=True, random_walk=True))
     best_action_counts, average_rewards = simulate(runs, time, bandits)
     # rewards = np.mean(average_rewards, axis=1)
 
     plt.figure(figsize=(10, 20))
 
+    ###2 subplots, 1 columna, primer subplot
     plt.subplot(2, 1, 1)
     plt.plot(average_rewards[0], label='$\\alpha = 0.1$')
-    ###plt.plot(average_rewards[1], label='Sample averages')
-    plt.plot(average_rewards[1], label='$\\alpha = 0.1$ Random walk')
-    ###plt.plot(average_rewards[3], label='Sample averages Random walk')
+    plt.plot(average_rewards[1], label='Sample averages')
+    plt.plot(average_rewards[2], label='$\\alpha = 0.1$ Random walk')
+    plt.plot(average_rewards[3], label='Sample averages Random walk')
     plt.xlabel('steps')
     plt.ylabel('average reward')
     plt.legend()
 
     plt.subplot(2, 1, 2)
     plt.plot(best_action_counts[0], label='$\\alpha = 0.1$')
-    ###plt.plot(best_action_counts[1], label='Sample averages')
-    plt.plot(best_action_counts[1], label='$\\alpha = 0.1$ Random walk')
-    ###plt.plot(best_action_counts[3], label='Sample averages Random walk')
+    plt.plot(best_action_counts[1], label='Sample averages')
+    plt.plot(best_action_counts[2], label='$\\alpha = 0.1$ Random walk')
+    plt.plot(best_action_counts[3], label='Sample averages Random walk')
     plt.xlabel('steps')
     plt.ylabel('% optimal action')
     plt.legend()

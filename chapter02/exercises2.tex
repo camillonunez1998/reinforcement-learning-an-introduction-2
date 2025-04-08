@@ -5,6 +5,10 @@
 \graphicspath{ {./images/} }
 \usepackage{hyperref}
 
+%%%Para mis comentarios en rojo
+\usepackage{xcolor}
+\def\red{\color{red}}
+
 \title{RL Excercise Chapter 2}
 \author{huseyinabanox }
 \date{June 2022}
@@ -38,14 +42,14 @@
 
     \subsection*{Answer}
 
-    \begin{table}[]
-        \begin{tabular}{llllllll}
-            t & Q(A1) & Q(A2) & Q(A3) & Greedy & Selected & Reward & Random?  \\
-            0 & 0     & 0     & 0     & Any    & 1        & -1     & Probable \\
-            1 & -1    & 0     & 0     & 2,3,4  & 2        & 1      & Probable \\
-            2 & -1    & 1     & 0     & 2      & 2        & -2     & Probable \\
-            3 & -1    & -1/2  & 0     & 3,4    & 2        & 2      & Yes      \\
-            4 & -1    & 1/3   & 0     & 2      & 3        & 0      & Yes      \\
+    \begin{table}%[]
+        \begin{tabular}{lllllllll}
+            t & Q(A1) & Q(A2) & Q(A3) & Q(A4) & Greedy & Selected & Reward & Random?  \\
+            0 & 0     & 0     & 0  &  0  & Any    & 1        & -1     & Possible \\
+            1 & -1    & 0     & 0  & 0   & 2,3,4  & 2        & 1      & Possible \\
+            2 & -1    & 1     & 0   & 0  & 2      & 2        & -2     & Unlikely \\
+            3 & -1    & -1/2  & 0  & 0   & 3,4    & 2        & 2      & Yes      \\
+            4 & -1    & 1/3   & 0   & 0  & 2      & 3        & 0      & Yes\\
         \end{tabular}
     \end{table}
 
@@ -141,9 +145,11 @@
     Express your answer quantitatively.
 
     \subsection*{Answer}
+{\red Aqui hice una correccion muy seria}
+
     First two bandits do not make random walk. Last two bandits make random walk. Constant step size performs better in case of random walk which creates a non-stationary target.
 
-    Note that, in the case of a random walk, even though constant step size used for action-value estimation achieves the best performance in terms of average reward received, but ironically performs the worse in terms of average optimal action! This says a lot, since basically it tells us that the value of actions, if not stationary, should not be... Aqui hay problemas.
+    Well honestly I was expecting to see a remarkable difference between the effectiveness of the constant step-size value estimator vs sample-average when upgrading to non-stationary random walks. However, at least when the timeline is of 1000 steps, the is no big difference.
 
     \includegraphics[scale=0.5]{figure_e_2_5}
 
@@ -176,11 +182,28 @@
     Carry out an analysis like that in (2.6) to show that Qn is an exponential recency-weighted average without initial bias.
 
     \subsection*{Answer}
-    $(1-\alpha)^{n}Q_1$ section in (2.6) carries the initial bias.
-    With new method it becomes $(1-\beta_1)(1-\beta_2)(1-\beta_3)\ldots(1-\beta_n)Q_1$.
 
-    As n gets larger, the trace parameter quickly approaches to 1.
-    When it is close to 1, step size $\beta$ approaches to one and $(1-\beta)$ becomes very small and effectively eliminates the initial bias.
+    {\red Hice una correccion muy seria. No entendí muy bien la matemática en detalle del por qué el peso del $i-$ésimo reward se va haciendo más pequeño a medida que n avanza, pero lo cierto es que por lo menos tiene sentido la argumentación. Saqué esta solucion del primer solucionario que miré.}
+
+First consider this alternative response to exercise 2.4.
+
+Let $\alpha_0 = 1$, then 
+\begin{equation}
+    Q_{n + 1} = \left(\prod_{i=1}^n (1 - \alpha_i) \right) Q_1 + \sum_{i = 1}^{n}  \alpha_{i} R_{i} \prod_{k = i + 1}^n
+(1 - \alpha_k).
+\end{equation}
+Where $\prod_{i=x}^y f(i) \doteq 1$ if $x > y$.
+
+Now we go for question 2.7. Consider the alternativ answer to Exercise 2.4. There is no dependence of $Q_k$ on $Q_1$ for $k > 1$ since $\beta_1 = 1$. Now it remains to show that the weights in the remaining sum decrease as we look further into the past. That is
+\begin{equation}
+    w_i = \beta_i \prod_{k = i + 1}^{n} (1 - \beta_k)
+\end{equation}
+increases with $i$ for fixed n. For this, observe that
+\begin{equation}
+    \frac{w_{i+1}}{w_i} = \frac{\beta_{i+1}}{\beta_i(1 - \beta_{i + 1})} = \frac{1}{1 - \alpha} > 1
+\end{equation} 
+where we have assumed $\alpha < 1$. If $\alpha = 1$ then $\beta_t = 1 \,\, \forall \, t$.
+
 
     \subsection{Question}
     UCB Spikes In Figure 2.4 the UCB algorithm shows a distinct spike
