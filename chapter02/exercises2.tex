@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
+\usepackage{amsfonts}
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
 \usepackage{hyperref}
@@ -43,13 +44,13 @@
     \subsection*{Answer}
 
     \begin{table}%[]
-        \begin{tabular}{lllllllll}
+        \begin{tabular}{ccccccccc}
             t & Q(A1) & Q(A2) & Q(A3) & Q(A4) & Greedy & Selected & Reward & Random?  \\
-            0 & 0     & 0     & 0  &  0  & Any    & 1        & -1     & Possible \\
-            1 & -1    & 0     & 0  & 0   & 2,3,4  & 2        & 1      & Possible \\
-            2 & -1    & 1     & 0   & 0  & 2      & 2        & -2     & Unlikely \\
-            3 & -1    & -1/2  & 0  & 0   & 3,4    & 2        & 2      & Yes      \\
-            4 & -1    & 1/3   & 0   & 0  & 2      & 3        & 0      & Yes\\
+            1 & 0     & 0     & 0  &  0  & Any    & 1        & -1     & Possible \\
+            2 & -1    & 0     & 0  & 0   & 2,3,4  & 2        & 1      & Possible \\
+            3 & -1    & 1     & 0   & 0  & 2      & 2        & -2     & Unlikely \\
+            4 & -1    & -1/2  & 0  & 0   & 3,4    & 2        & 2      & Yes      \\
+            5 & -1    & 1/3   & 0   & 0  & 2      & 3        & 0      & Yes\\
         \end{tabular}
     \end{table}
 
@@ -212,8 +213,7 @@ where we have assumed $\alpha < 1$. If $\alpha = 1$ then $\beta_t = 1 \,\, \fora
     decreases on the subsequent steps. Hint: if c = 1, then the spike is less prominent.
 
     \subsection*{Answer}
-    At start uncertainity on optimal action is high and UCB selects optimal actions. Then uncertainity becomes low and UCB prefers non-optimal actions.
-    Updated optimal action values stop the curve going further down.
+  In the first ten steps it is just randomly exploring (forced to explore), so the reward is low. Then, in the eleventh step, it already has an idea on the upper bounds, and all the actions have the same uncertainty, so the agent chooses the optimal action. Then, {\bf since UCB prioritizes higher uncertainty}, especially in the first steps, the agent is forced to keep exploring not optimal actions. Eventually, uncertainty is less and less important, and also smaller since actions have already been chosen multiple times. This translates to a pseudo-policy\footnote{I call it a pseudo policy because it is actually simpler that a policy. An actual policy is used when the state is not constant, and I am not talking about the case when the action-value is a random walk. I am talking about the case when, for example, the agent is facing multiple bandits but only one at a time, without actually knowing which bandit (with its own action-value distribution, which may be itself a random walk or not) he is facing.} where the priority is the estimation over uncertainty, thus, taking better choices.
 
     \subsection{Question}
     Show that in the case of two actions, the soft-max distribution is the same as that given by the logistic, or sigmoid, function often used in statistics and artificial neural networks.
@@ -232,41 +232,16 @@ where we have assumed $\alpha < 1$. If $\alpha = 1$ then $\beta_t = 1 \,\, \fora
     What is the best expectation of success you can achieve in this task, and how should you behave to achieve it?
 
     \subsection*{Answer}
+    
+{\bf Case when we don't know the bandit we are facing:}
 
-    Each case may occur with the same probability.
+In this case, the best thing we can do is to learn which is the value of each action itself (independently of the bandit). That is, learning $\mathbb{E}[R_i|A_i=1]=\mathbb{E}[R_i|S_i = A, A_i=1]*\mathbb{P}[S_i = A] + \mathbb{E}[R_i|S_i = B]*\mathbb{P}[S_i = B, A_i=1]$, $\mathbb{E}[R_i|A_i=2]$, and then choosing greedily the action with the best expectation, using whatever method that may fit the situation.
 
-    $E[q]=E[q|A]+E[q|B]$
+In this particular case, we have that $\mathbb{E}[R_i|A_i=1]=\mathbb{E}[R_i|A_i=2]=0.5$. This means that in this situation our best expectation for the agent would be that it learns that it should choose uniformly action 1 and 2 \footnote{Although it may not be actually optimal, it is what we expect the agent to learn according to our requirements when choosing the learning method.}
 
-    \subsubsection*{Case not known}
+{\bf Case where we do know the bandit we are facing:}
 
-    There is no way we can learn about the actual action values thus the best we can do is to select the arms uniformly and take the average reward for each arm.
-
-    $E[q|1]=0.5*(0.2)+0.5*(0.8) = 0.5$
-
-    $E[q|2]=0.5*(0.1)+0.5*(0.9) = 0.5$
-
-    $E[q|A] = E[q|A,1] + E[q|A,2] = 0.5 * 0.5 + 0.5 * 0.5 = 0.5 $
-
-    $E[q|B] = E[q|B,1] + E[q|B,2] = 0.5 * 0.5 + 0.5 * 0.5 = 0.5 $
-
-    $E[q]=E[q|A]+E[q|B] = 0.5 * 0.5 + 0.5 * 0.5 = 0.5$
-
-    \subsubsection*{Case known}
-
-    Since cases are known, it is possible to learn action values for each arm in each case.
-    Thus it becomes possible to act optimally in each case.
-
-    $E[q|A, 1] = 0.1, E[q|A, 2] = 0.2$
-
-    $E[q|B, 1] = 0.9, E[q|B, 2] = 0.8$
-
-    It is optimal to select arm 2 in case A, it is optimal to select arm 1 in case B.
-
-    $E[q|A] = E[q|A,2] = 0.2 $
-
-    $E[q|B] = E[q|B,1] = 0.9 $
-
-    $E[q]=E[q|A]+E[q|B] = 0.5 * 0.2 + 0.5 * 0.9 = 0.55$
+In this case the agent has all the information it should need to learn an optimal policy. So we basically expect it to learn to choose greedily action 2 in case A, and action 2 in case B. Regarding the strategy (learning method), I would say a good option would be to basically run two independent learning agents, one for each bandit.
 
     \subsection{Question}
 
