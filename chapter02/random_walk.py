@@ -185,7 +185,8 @@ def exercise_2_11_figure_e_2_11(runs=2000, time=1000):
             bandits.append(generator(pow(2, param)))
 
     _, average_rewards = simulate(runs, time, bandits)
-    rewards = np.mean(average_rewards, axis=1) # average_rewards[:, :, 100_000:]
+
+    rewards = np.mean(average_rewards[:, :500], axis=1)
 
     i = 0
     for label, parameter in zip(labels, parameters):
@@ -202,5 +203,5 @@ def exercise_2_11_figure_e_2_11(runs=2000, time=1000):
 
 if __name__ == '__main__':
 
-    exercise_2_5_figure_e_2_5()
-    #exercise_2_11_figure_e_2_11()
+    #exercise_2_5_figure_e_2_5()
+    exercise_2_11_figure_e_2_11()
