@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.13)  9 APR 2025 21:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.13)  11 APR 2025 12:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -80,13 +80,6 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \mathdisplay@stack=\toks22
 LaTeX Info: Redefining \[ on input line 2938.
 LaTeX Info: Redefining \] on input line 2939.
-) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
  (/usr/local/texlive/2022/texmf-dist/tex/latex/graphics/keyval.sty
@@ -223,6 +216,13 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1372.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1373.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1374.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1375.
+) (/usr/local/texlive/2022/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ) (/usr/local/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-02-07 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count281
@@ -326,33 +326,29 @@ Overfull \hbox (31.3491pt too wide) in paragraph at lines 155--156
 [3]
 Overfull \vbox (172.69824pt too high) has occurred while \output is active []
 
- [4 <./figure_e_2_5.png>] [5] [6]
-Overfull \hbox (3.02742pt too wide) in paragraph at lines 253--254
-\OT1/cmr/m/n/10 A mod-i-fied ver-sion of the 10-armed testbed from []https://github.com/LyWangPX[]
- []
-
-<figure_e_2_11.png, id=121, 462.528pt x 346.896pt>
+ [4 <./figure_e_2_5.png>] [5] [6] [7]
+<figure_e_2_11.png, id=129, 462.528pt x 346.896pt>
 File: figure_e_2_11.png Graphic file (type png)
 <use figure_e_2_11.png>
 Package pdftex.def Info: figure_e_2_11.png  used on input line 255.
 (pdftex.def)             Requested size: 231.26343pt x 173.44757pt.
-[7] [8 <./figure_e_2_11.png>] (./exercises2.aux)
+ [8 <./figure_e_2_11.png>] (./exercises2.aux)
 Package rerunfilecheck Info: File `exercises2.out' has not changed.
 (rerunfilecheck)             Checksum: E1C4EB9342F1BBBDCD111F52DE524357;1160.
  ) 
 Here is how much of TeX's memory you used:
  9436 strings out of 478268
  146704 string characters out of 5846346
- 450526 words of memory out of 5000000
+ 450459 words of memory out of 5000000
  27482 multiletter control sequences out of 15000+600000
  477122 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,8n,63p,1241b,339s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exercises2.pdf (8 pages, 380897 bytes).
+Output written on exercises2.pdf (8 pages, 381326 bytes).
 PDF statistics:
- 213 PDF objects out of 1000 (max. 8388607)
- 167 compressed objects within 2 object streams
+ 212 PDF objects out of 1000 (max. 8388607)
+ 166 compressed objects within 2 object streams
  48 named destinations out of 1000 (max. 500000)
  107 words of extra memory for PDF output out of 10000 (max. 10000000)
 

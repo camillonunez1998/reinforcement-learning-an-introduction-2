@@ -1,14 +1,14 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
-\usepackage{amsfonts}
 \usepackage{graphicx}
 \graphicspath{ {./images/} }
 \usepackage{hyperref}
 
-%%%Para mis comentarios en rojo
+%%%Mis paquetes
 \usepackage{xcolor}
 \def\red{\color{red}}
+\usepackage{amsfonts}
 
 \title{RL Excercise Chapter 2}
 \author{huseyinabanox }
@@ -250,7 +250,7 @@ In this case the agent has all the information it should need to learn an optima
 
     \subsection*{Answer}
 
-    A modified version of the 10-armed testbed from \href{https://github.com/LyWangPX/Reinforcement-Learning-2nd-Edition-by-Sutton-Exercise-Solutions}{https://github.com/LyWangPX} is used.
+    Below is the demanded graph. 200000 time steps was definitely taking extremely long, so we remained with 1000 time steps, and as a measure of effective for each parameter value, we used the mean value of the last 500 average rewards. One possible good option for future experiments is to try the 200000 time steps and, since for example in this case there were 36 bandits being tested with different strategies and parameter values, execute their graph in parallel. 
 
     \includegraphics[scale=0.5]{figure_e_2_11}
 

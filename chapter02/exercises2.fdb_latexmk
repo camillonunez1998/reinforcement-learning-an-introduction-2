@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1744228115 "/Users/camilonunez/Desktop/Internship-2025/reinforcement-learning-an-introduction-2/chapter02/exercises2.tex" "exercises2.pdf" "exercises2" 1744228116
-  "/Users/camilonunez/Desktop/Internship-2025/reinforcement-learning-an-introduction-2/chapter02/exercises2.tex" 1744228114 13962 e5961365aab3e00bd60a2bd8bc590214 ""
+["pdflatex"] 1744368625 "/Users/camilonunez/Desktop/Internship-2025/reinforcement-learning-an-introduction-2/chapter02/exercises2.tex" "exercises2.pdf" "exercises2" 1744368626
+  "/Users/camilonunez/Desktop/Internship-2025/reinforcement-learning-an-introduction-2/chapter02/exercises2.tex" 1744368625 14228 b95514971ba550dc97eea512619f04c0 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -94,10 +94,10 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1668334728 2826448 9021926499f6a884f42e3dd66ad1cf76 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "exercises2.aux" 1744228116 2061 41ed2eb9bc470db3cd0a5b025f602a5c "pdflatex"
-  "exercises2.out" 1744228116 1160 e1c4eb9342f1bbbdcd111f52de524357 "pdflatex"
-  "exercises2.tex" 1744228114 13962 e5961365aab3e00bd60a2bd8bc590214 ""
-  "figure_e_2_11.png" 1744015618 48892 8c7879da99289ca39f260c1ade82c956 ""
+  "exercises2.aux" 1744368626 2061 41ed2eb9bc470db3cd0a5b025f602a5c "pdflatex"
+  "exercises2.out" 1744368626 1160 e1c4eb9342f1bbbdcd111f52de524357 "pdflatex"
+  "exercises2.tex" 1744368625 14228 b95514971ba550dc97eea512619f04c0 ""
+  "figure_e_2_11.png" 1744324893 45456 e8e0df03fe21c2c11de7246dcf1ba808 ""
   "figure_e_2_5.png" 1744137762 187963 95073ddf804ec1bd742021e67d894f3f ""
   (generated)
   "exercises2.aux"

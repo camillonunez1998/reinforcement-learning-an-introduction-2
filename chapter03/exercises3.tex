@@ -8,6 +8,14 @@
 \usepackage{amsmath}
 \DeclareMathOperator*{\argmax}{argmax}
 
+%%%Mis paquetes
+\usepackage{xcolor}
+\def\red{\color{red}}
+\usepackage{amsfonts}
+
+%Title
+\title{RL Excercise Chapter 3}
+
 % Document
 \begin{document}
 
@@ -19,53 +27,21 @@
 
     \subsection{Question}
     Devise three example tasks of your own that fit into the MDP framework,
-    identifying for each its states, actions, and rewards. Make the three examples as di↵erent
-    from each other as possible. The framework is abstract and flexible and can be applied in
-    many di↵erent ways. Stretch its limits in some way in at least one of your examples
+    identifying for each its states, actions, and rewards. Make the three examples as different from each other as possible. The framework is abstract and flexible and can be applied in
+    many different ways. Stretch its limits in some way in at least one of your examples
 
     \subsection*{Answer}
 
-    \subsubsection*{Stock Trading}
-
-    An agent managing the given amount of cache in a stock.
-    The agent buys and sells in order to maximize the cache it is given.
-
-    \textbf{States}: Cache amount, stock amount, buy/sell prices, market indicators, global indices (e.g. risk index)
-
-    \textbf{Actions}: Buy, Sell, Do nothing
-
-    \textbf{Rewards}: Cache amount deviation from the initial amount.
-
-    \subsubsection*{Landing an UAV}
-
-    An agent that can land an UAV in any weather conditions.
-    The agent locates the landing point, considers the distance and the altitude, and controls engine thrust and control planes to the land the aircraft.
-
-    \textbf{States}: Distance to the landing point, altitude, azimuth, velocity, wind info, engine thrust etc.
-
-    \textbf{Actions}: Increase/Decrease elevation, change heading, change engine thrust, control landing gears.
-
-    \textbf{Rewards}: Positive reward upon landing, possibly increasing with proportionally to proximity to desired landing location.
-    A very low reward upon crash.
-
-    \subsubsection*{Playing ATARI Games}
-
-    An agent that can play atari games by looking at screen pixel images.
-
-    \textbf{States}: Screen pixels.
-
-    \textbf{Actions}: Game controls, e.g. left, right, shoot
-
-    \textbf{Rewards}: Positive reward upon winning.
-    Negative reward upon loosing.
+    An example of this is the topic of my internship, so I will just leave this one for later.
 
     \subsection{Question}
     Is the MDP framework adequate to usefully represent all goal-directed learning tasks?
     Can you think of any clear exceptions?
 
+    %%%Este ejercicio realmente no lo revisé.
+
     \subsection*{Answer}
-    Agent needs to learn the reward at the end of the episode.
-    If the environment does not provide a reward or does provide a vector of rewards the agent cannot learn.
+    The main thing about the MDP is that Markov property. There are tasks where this does not hold. For instance, in Poker, the previous states will determine what is in the deck and what is not. Since, in general, states do not store all the relevant information from previous states in this game, it does not obey Markov property.
 
     \subsection{Question}
     Consider the problem of driving.
@@ -102,9 +78,27 @@
 
     \subsection*{Answer}
 
-    Rewards are deterministic. p(s', r |s, a) column will be similar to p(s'|s, a) column.
-    Answer will be similar to the table in example 3.3 excluding rows with 0 probability.
+    The events in which we suppose that $S_t$ and $A_t$ have already fixed values, also happens to have the property that $\mathbb{E}[R_t+1]$ is constant it all the subevents of the form $S_{t+1}=s'$. This basically means that computing $p(s',r|s,a)$ is reduced to computing $p(s'|s,a)$.
 
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{ll|ll|c}
+            $s$ & $a$ & $s'$ & $r$ & $p(s', r | s, a)$ \\
+            \hline
+             \texttt{high}& \texttt{search}&  \texttt{high}&  $r_{\texttt{search}}$& $\alpha$  \\
+             \texttt{high}& \texttt{search}&  \texttt{low}&   $r_{\texttt{search}}$& $1 - \alpha$ \\
+             \texttt{high}& \texttt{wait}&  \texttt{high}&   $r_{\texttt{wait}}$&  $1$ \\
+             \texttt{low}& \texttt{recharge}&   \texttt{high}&    $0$&   $1$\\
+             \texttt{low}& \texttt{search}&  \texttt{high}&  $-3$& $1 - \beta$  \\
+             \texttt{low}& \texttt{search}&  \texttt{low}&   $r_{\texttt{search}}$& $\beta $\\
+             \texttt{low}& \texttt{wait}&  \texttt{low}&   $r_{\texttt{wait}}$&  $1$
+        \end{tabular}
+        
+        
+        \caption{Transition table}
+        %\label{table:3.4}
+        \end{table}
+        
     \subsection{Question}
 
     The equations in Section 3.1 are for the continuing case and need to be modified (very slightly) to apply to episodic tasks.
@@ -113,7 +107,7 @@
     \subsection*{Answer}
 
     \begin{equation}
-        \sum_{s' \in S^+}^{} \sum_{r \in R}^{} p(s', r | s, a) = 1 \text{ for all } s \in S, a \in A(s), S^+ \text{being all states, } S \text{ being non-terminal states}.
+        \sum_{s' \in \mathcal{S}^+}^{} \sum_{r \in \mathcal{R}}^{} p(s', r | s, a) = 1 \text{ for all } s \in \mathcal{S}, a \in \mathcal{A}(s), \mathcal{S}^+ \text{being all states, } \mathcal{S} \text{ being non-terminal states}.
     \end{equation}
 
     \subsection{Question}
@@ -124,9 +118,22 @@
 
     \subsection*{Answer}
 
-    Similar to the continuing case, the return will be related to $-\gama^K$.
+    In this case, Episodic + Discounting, the return at each time would be:
 
-    The difference is that in continuing case the return will keep accumulating.
+    \begin{equation}
+        G_t = - \gamma^{T - t}.
+    \end{equation}
+
+    In the continuing formulation it would be:
+
+    \begin{equation}
+        G_t = - \sum_{k \in \mathcal{K}} \gamma^{k - t},
+    \end{equation}
+    where $\mathcal{K}$ is the set of times after $t$ at which the pole falls over.
+
+    Both formulations should work correctly.
+
+
 
     \subsection{Question}
 
@@ -139,7 +146,7 @@
 
     \subsection*{Answer}
 
-    The robot should be incentivized to exit the maze as soon as possible.
+    If you do not use discounting you are assigning the same return value to a policy taking 100 steps to find the way out than to a policy taking only 5 steps. That is the problem.
 
     \subsection{Question}
 
@@ -190,9 +197,19 @@
 
     \subsection*{Answer}
 
-    Equation $\sum_{k=0}^{\inf}ar^k$ is sum of geometric series which equals to $\frac{a}{1-r}$ if $r<1$.
+Supposing we know the series converges,
 
-    In equation (3.10) $a=1$ and $r = \gamma = 0.9$
+$\gamma + \gamma^2 + \gamma^3 + \dots = k$
+
+$\Leftrightarrow \gamma(1+\gamma + \gamma^2 + \dots) = k$ 
+
+$\Leftrightarrow \frac{k}{\gamma} = k + 1 \Leftrightarrow k = k\gamma + \gamma$
+
+$\Leftrightarrow k = \frac{\gamma}{1-\gamma}$.
+
+Alternatively, equation $\sum_{k=0}^{\infty}a*r^k$ is sum of geometric series which equals to $\frac{a}{1-r}$ if $r<1$.
+
+In equation (3.10) $a=1$ and $r = \gamma = 0.9$
 
     \subsection{Question}
 
@@ -240,7 +257,7 @@
 
     In the gridworld example, rewards are positive for goals, negative for running into the edge of the world, and zero the rest of the time.
     Are the signs of these rewards important, or only the intervals between them?
-    Prove, using (3.8), that adding a constant c to all the rewards adds a constant, v c , to the values of all states, and thus does not a↵ect the relative values of any states under any policies.
+    Prove, using (3.8), that adding a constant c to all the rewards adds a constant, v c , to the values of all states, and thus does not affect the relative values of any states under any policies.
     What is v c in terms of c and ?
 
     \subsection*{Answer}
