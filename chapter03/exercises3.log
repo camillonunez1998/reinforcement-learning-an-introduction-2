@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.13)  11 APR 2025 18:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.13)  16 APR 2025 23:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -155,17 +155,17 @@ Overfull \hbox (98.37357pt too wide) detected at line 111
  []
 
 [3] [4] [5] [6]
-Overfull \hbox (28.16759pt too wide) detected at line 283
+Overfull \hbox (28.16759pt too wide) detected at line 285
 []\OML/cmm/m/it/10.95 v[]\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 s\OT1/cmr/m/n/10.95 ) = \OML/cmm/m/it/10.95 E\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 G[]\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 S[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 s\OT1/cmr/m/n/10.95 ] = \OML/cmm/m/it/10.95 E\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 G[] \OT1/cmr/m/n/10.95 + []\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 S[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 s\OT1/cmr/m/n/10.95 ] = \OML/cmm/m/it/10.95 E\OT1/cmr/m/n/10.95 [\OML/cmm/m/it/10.95 G[]\OMS/cmsy/m/n/10.95 j\OML/cmm/m/it/10.95 S[] \OT1/cmr/m/n/10.95 = \OML/cmm/m/it/10.95 s\OT1/cmr/m/n/10.95 ] + [] = \OML/cmm/m/it/10.95 v\OT1/cmr/m/n/10.95 (\OML/cmm/m/it/10.95 s\OT1/cmr/m/n/10.95 ) + []
  []
 
 [7] [8]
-Overfull \hbox (5.42632pt too wide) in paragraph at lines 348--349
+Overfull \hbox (5.42632pt too wide) in paragraph at lines 350--351
 \OT1/cmr/m/n/10.95 Draw or de-scribe the con-tours of the op-ti-mal action-value func-tion for putting,
  []
 
 [9] [10]
-Overfull \hbox (20.922pt too wide) in paragraph at lines 484--485
+Overfull \hbox (20.922pt too wide) in paragraph at lines 486--487
 \OT1/cmr/m/n/10.95 Rewrite the four Bell-man equa-tions for the four value func-tions $(\OML/cmm/m/it/10.95 v[]; v[]; q[][]q[]\OT1/cmr/m/n/10.95 )$
  []
 
@@ -179,7 +179,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  54i,16n,62p,462b,285s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exercises3.pdf (13 pages, 201267 bytes).
+Output written on exercises3.pdf (13 pages, 201516 bytes).
 PDF statistics:
  132 PDF objects out of 1000 (max. 8388607)
  82 compressed objects within 1 object stream

@@ -223,12 +223,12 @@ In equation (3.10) $a=1$ and $r = \gamma = 0.9$
 
     \subsection{Question}
 
-    Give an equation for $V_{pi}$ in terms of $q_\pi$ and $\pi$.
+    Give an equation for $V_{\pi}$ in terms of $q_\pi$ and $\pi$.
 
     \subsection*{Answer}
 
     \begin{equation}
-        v_{\pi}(s) = E_{\pi}[\sum_{a \in A(s)}^{} \pi(a|s)q_{\pi}(a,s)]
+        v_{\pi}(s) = \sum_{a \in A(s)}^{} \pi(a|s)q_{\pi}(a,s)
     \end{equation}
 
     \subsection{Question}
@@ -238,8 +238,10 @@ In equation (3.10) $a=1$ and $r = \gamma = 0.9$
     \subsection*{Answer}
 
     \begin{equation}
-        q_{\pi}(s, a) = \sum_{s',r}^{} p(s', r | s, a) [v_{\pi}(s')*\gamma + r ]
+        q_{\pi}(s, a) = \sum_{s' \in \mathcal{S}}^{} v_{\pi}(s')*p(s', r | s, a)
     \end{equation}
+
+    Where $r = \mathbb{E}[R_{t+1}|S_t = s, A_t = a]$.
 
     \subsection{Question}
 
