@@ -264,6 +264,10 @@ In equation (3.10) $a=1$ and $r = \gamma = 0.9$
 
     \subsection*{Answer}
 
+    No, negative numbers are not necessary, only the distances matter in terms of relative state-value. This is exactly what we prove below.
+
+    Answering the second question.
+
     \begin{equation}
         G_{t} = \sum_{k=0}^{\infty} \gamma^{k} R_{t+k+1}
     \end{equation}
@@ -294,7 +298,9 @@ In equation (3.10) $a=1$ and $r = \gamma = 0.9$
     \subsection*{Answer}
 
     In an episodic task adding a constant may change the behaviour.
-    If c is big enough it may assign a positive reward to taking time in the maze which makes the agent prefer not to exit the maze.
+    If c is big enough it may assign a positive reward to taking time in the maze which makes the agent prefer not to exit the maze. 
+
+    For example, in the example of the maze presented in $3.2$, if we use $c = 2$ and no discount\footnote{I am not sure if this problem can be circumvented with by using Discount.}, the robot will prefer to stay in the maze forever.
 
     \subsection{Question}
 
@@ -305,17 +311,19 @@ In equation (3.10) $a=1$ and $r = \gamma = 0.9$
 
     \subsection*{Answer}
 
-    $q(s, a) =  E_{\pi}[G_{t}|S_{t}=s, A_{t}=a] = E_{\pi}[R_{t+1} + \gamma G_{t+1}|S_{t}=s, A_{t}=a]$
-
-    $q(s, a) =  \sum_{s',r} p(s',r | s, a) [r + \gamma \sum_{a' \in A(s')} \pi(a'|s')q(s', a') ] $
+    \begin{align*}
+        q_\pi(s, a) & =  \sum_{s', r} p(s', r|s, a) [r + v_\pi(s')]
+    \end{align*}
 
     \subsection{Question}
 
-    The value of a state depends on the values of the actions possible in that state and on how likely each action is to be taken under the current policy.
+   The value of a state depends on the values of the actions possible in that state and on how likely each action is to be taken under the current policy.
     We can think of this in terms of a small backup diagram rooted at the state and considering each possible action.
     Give the equation corresponding to this intuition and diagram for the value at the root node, v pi (s), in terms of the value at the expected leaf node, q pi (s, a), given St = s.
 
-    \subsection*{Answer}
+    \subsection*{Answer} 
+
+    {\red No lo revisé.}
 
     $v_{\pi}(s) = E_{\pi}[G_{t}|S_{t}=s] = E_{\pi}[q_{\pi}(s,a)|S_{t}=s, a \in A(s)] $
 
@@ -329,6 +337,8 @@ In equation (3.10) $a=1$ and $r = \gamma = 0.9$
 
     \subsection*{Answer}
 
+    {\red No lo revisé.}
+
     $ q_{\pi}(s, a) = E[G_{t}|S_{t}=s, A_{t}=a] = E[R_{t+1} + \gamma v_{\pi}(s') |S_{t}=s, A_{t}=a, s' \in A(s)] $
 
     $ q_{\pi}(s, a) = \sum_{s',r} p(s', r | s, a) [r + \gamma v_{\pi}(s')] $
@@ -338,6 +348,7 @@ In equation (3.10) $a=1$ and $r = \gamma = 0.9$
     Draw or describe the optimal state-value function for the golf example.
 
     \subsection*{Answer}
+    {\red No lo revisé.}
 
     It is optimal to use putter inside the green region, elsewhere driver is the optimal club.
 
@@ -350,6 +361,7 @@ In equation (3.10) $a=1$ and $r = \gamma = 0.9$
     Draw or describe the contours of the optimal action-value function for putting, q*(s, putter), for the golf example.
 
     \subsection*{Answer}
+    {\red No lo revisé.}
 
     Action value for the putter inside the green region is -1;
     Action value for the putter for the contour where green region can be reached in one shot using a putter is -2;
@@ -367,6 +379,7 @@ In equation (3.10) $a=1$ and $r = \gamma = 0.9$
     What policy is optimal if $\gamma = 0$? If = $\gamma = 0.9$? If $\gamma = 0.5$?
 
     \subsection*{Answer}
+    {\red No lo revisé.}
 
     $ v_{\pi}(s_{0}) = E_{\pi}[G_{0}] =  E_{\pi}[R_{1} + \gamma G_{1}] $
 
@@ -426,6 +439,7 @@ In equation (3.10) $a=1$ and $r = \gamma = 0.9$
     Use your knowledge of the optimal policy and (3.8) to express this value symbolically, and then to compute it to three decimal places.
 
     \subsection*{Answer}
+    {\red No lo revisé.}
 
     $G_{t} = \sum_{k=0} \gamma ^ {k} R_{t+k+1} $
 
@@ -442,6 +456,7 @@ In equation (3.10) $a=1$ and $r = \gamma = 0.9$
     Give an equation for v* in terms of q*.
 
     \subsection*{Answer}
+    {\red No lo revisé.}
 
     $ v_{*}(s) = \max_{a} q_{*}(s,a) $
 
@@ -450,6 +465,7 @@ In equation (3.10) $a=1$ and $r = \gamma = 0.9$
     Give an equation for q* in terms of v* and the four-argument p.
 
     \subsection*{Answer}
+    {\red No lo revisé.}
 
     $ q_{*}(s, a) = \sum_{s', r} p(s', r | s, a) ( r + \gamma v*(s') ) $
 
@@ -458,6 +474,7 @@ In equation (3.10) $a=1$ and $r = \gamma = 0.9$
     Give an equation for $ \pi_{*} $ in terms of $ q_* $ .
 
     \subsection*{Answer}
+    {\red No lo revisé.}
 
     \begin{equation}
         \pi_*(a|s) =
@@ -472,6 +489,7 @@ In equation (3.10) $a=1$ and $r = \gamma = 0.9$
     Give an equation for pi* in terms of v* and the four-argument p.
 
     \subsection*{Answer}
+    {\red No lo revisé.}
 
     \begin{equation}
         \pi_*(a|s) =
@@ -486,6 +504,7 @@ In equation (3.10) $a=1$ and $r = \gamma = 0.9$
     Rewrite the four Bellman equations for the four value functions $ (v_\pi ,v_* , q_\pi \text{ and } q_* ) $ in terms of the three argument function p (3.4) and the two-argument function r (3.5).
 
     \subsection*{Answer}
+    {\red No lo revisé.}
 
     \begin{equation}
         G_t = R_{t+1} + \gamma G_{t+1}
