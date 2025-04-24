@@ -1,4 +1,4 @@
-%! Author = melek
+ %!Author = Camilo Nuñez
 %! Date = 9.06.2022
 
 % Preamble
@@ -10,6 +10,9 @@
 
 \usepackage{graphicx}
 \graphicspath{ {../images/} }
+
+%Title
+\title{RL Excercises Chapter 4}
 
 % Document
 \begin{document}
@@ -26,7 +29,7 @@
 
     \subsection*{Answer}
 
-    $ q_\pi(s,a) = r + \gamma v_\pi (s') $
+    $ q_\pi(s,a) = \sum_{r \in \mathcal{R}; s' \in \mathcal{S}} r*p(s',r|s,a) + \gamma v_\pi (s') $
 
     where reward is always -1 and rewards are not discounted.
 
@@ -46,7 +49,7 @@
 
     \subsection*{Answer}
 
-    $ v_\pi(s) = \sum_{a}^{} \pi(a|s) [r(a,s) + \gamma v_\pi (s')] $
+    $ v_\pi(s) = \sum_{a \in \mathcal{A}} \pi(a|s) \sum_{r \in \mathcal{R}; s' \in \mathcal{S}} [p(s´,r|s,a) + \gamma v_\pi (s')] $
 
     where actions are equaprobable, reward is always -1 and rewards are not discounted.
 
@@ -129,8 +132,8 @@
     Loop for each $ s \in S $: \\
     Loop for each $ a \in A(s) $: \\
     \begin{itemize}
-        q = Q(s, a) \\
-        Q(s, a) = $ \sum_{s',r} p(s',r| s, a) [ r + \gamma Q(s', \pi(s'))  ] $
+    \item q = Q(s, a) \\
+    \item  Q(s, a) = $ \sum_{s',r} p(s',r| s, a) [ r + \gamma Q(s', \pi(s'))  ] $
     \end{itemize}
 
     \subsubsection*{Policy Improvement}
