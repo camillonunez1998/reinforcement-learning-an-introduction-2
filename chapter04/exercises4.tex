@@ -11,6 +11,11 @@
 \usepackage{graphicx}
 \graphicspath{ {../images/} }
 
+%%%Mis paquetes
+\usepackage{xcolor}
+\def\red{\color{red}}
+\usepackage{amsfonts}
+
 %Title
 \title{RL Excercises Chapter 4}
 
@@ -116,7 +121,7 @@
 
     This expression may result in choosing between equally good actions causing the policy improvement step not to stop.
 
-    Assuming the policy function assigns zero probabilities to all sub-optimal functions and return a set of optimal actions. A possible solution could be:
+    Assuming the policy function assigns zero probabilities to all sub-optimal functions and return a set of optimal actions with uniform probability of being chosen. A possible solution could be:
 
     If $old-action \notin \pi(s)$, then policy-stable=false
 
@@ -130,25 +135,26 @@
 
     \subsubsection*{Policy Evaluation}
     Loop for each $ s \in S $: \\
-    Loop for each $ a \in A(s) $: \\
-    \begin{itemize}
-    \item q = Q(s, a) \\
-    \item  Q(s, a) = $ \sum_{s',r} p(s',r| s, a) [ r + \gamma Q(s', \pi(s'))  ] $
-    \end{itemize}
+
+    \hspace{4mm} Loop for each $ a \in A(s) $: \\
+
+    \hspace{6mm} $q_{k+1}(s, a) = \mathbb{E}_{\pi}[R_{t+1}+\gamma v_k(S_{t+1})|S_t=s,A_t=a]$
+    
+    \hspace{6mm} $= \sum_{s',r} p(s',r| s, a) [ r + \gamma Q(s', \pi(s'))  ] $
 
     \subsubsection*{Policy Improvement}
-    $ \pi(s) = \argmax_{a} Q(s, a) $
+    \hspace{4mm} $ \pi(s) = \argmax_{a} q(s, a) $
 
     \subsection{Question}
 
-    Suppose you are restricted to considering only policies that are "$\epsilon$-soft, meaning that the probability of selecting each action in each state, s, is at least $\epsilon/|A(s)|$.
+    Suppose you are restricted to considering only policies that are $\epsilon$-soft, meaning that the probability of selecting each action in each state, s, is at least $\epsilon/|A(s)|$.
     Describe qualitatively the changes that would be required in each of the steps 3, 2, and 1, in that order, of the policy iteration algorithm for v* on page 80.
 
     \subsection*{Answer}
 
     \subsubsection*{Step 3}
 
-    In policy improvement step, instead of selecting the maximal action, $ \epsilon-$soft assigns a propability to each action using the following rule:
+    In policy improvement step, instead of selecting the maximal action, $ \epsilon-$soft assigns a probability to each action using the following rule:
 
     \begin{equation}
         \pi(a|s) =
@@ -160,11 +166,13 @@
 
     \subsubsection*{Step 2}
 
-    In policy iteration step, instead of using a single action, use all actions weighted with the associated proability of selecting that action.
+    In policy iteration step, instead of using a single action, use all actions weighted with the associated proability of selecting that action. That is, 
+
+    $V(s) \leftarrow \sum_{a \in \mathcal{A}(s)}\pi(a|s) \sum_{s',r}p(s',r|s,a)[r+\gamma V(s')]$
 
     \subsubsection*{Step 1}
 
-    In initialization step, assign equal probability to all actions in a state.
+    In initialization step, assign equal probability to all actions in a state. That is, $\mathcal{P}(\pi(s) = a) = \frac{1}{|\mathcal{A}(s)|}$ for all $a \in \mathcal{A}(s)$.
 
     \subsection{Question}
 
@@ -178,6 +186,8 @@
     To check your program, first replicate the results given for the original problem.
 
     \subsection*{Answer}
+
+    {\red Este no lo revisé.}
 
     \includegraphics[scale=0.15]{figure_4_2_e_4_7}
 
@@ -215,6 +225,8 @@
     Are your results stable as theta goes to 0?
 
     \subsection*{Answer}
+
+    {\red Solo revisé la respuesta en el PDF, no el programa.}
 
     \includegraphics[scale=0.4]{figure_4_3_e_4_9_p25}
 
