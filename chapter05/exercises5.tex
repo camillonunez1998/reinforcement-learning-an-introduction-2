@@ -12,6 +12,14 @@
 \usepackage{hyperref}
 \graphicspath{ {../images/} }
 
+%%%Mis paquetes
+\usepackage{xcolor}
+\def\red{\color{red}}
+\usepackage{amsfonts}
+
+%Title
+\title{RL Excercises Chapter 5}
+
 % Document
 \begin{document}
 
@@ -28,7 +36,11 @@
     Why are the frontmost values higher in the upper diagrams than in the lower?
 
     \subsection*{Answer}
-    No answer provided.
+    \begin{itemize}
+        \item Policy is to hit unless $S \geq 20$. So you run a rik of going bust if you have 12-19, but you most likely win when you stick on 20 or 21
+        \item Drops off because dealer has a usable ace
+        \item Frontmost row is higher in the upper diagram because you have one chance more in the sense that if you bust one time, you can still use the Ace.
+    \end{itemize}
 
     \subsection{Question}
 
@@ -62,7 +74,7 @@
     Average return for each state-action pair can be calculated similarly.
 
     \begin{equation}
-        Q(S,A) = Q(S,A) + (G - Q(S,A)) / N(S,A)
+        Q(S,A) = \frac{Q(S,A) \times (N(S,A)-1) + G}{N(S,A)} = Q(S,A) + (G - Q(S,A)) / N(S,A)
     \end{equation}
 
     \subsection{Question}
@@ -83,7 +95,9 @@
 
     Every visit case:
 
-    $ v(s) = 1 * 10 + 1 * 9 + 1 * 8 + 1 * 7 + 1 * 6 + 1 * 5 + 1* 4 + 1 * 3 + 1 * 2 + 1 * 1 / 10 =  55 / 10 = 5.5 $
+    At the end of the algorithm $Returns(s)=[1,2,3,4,5,6,7,8,9,10] $, and
+
+    $ v(s) = \frac{ 1 * 10 + 1 * 9 + 1 * 8 + 1 * 7 + 1 * 6 + 1 * 5 + 1* 4 + 1 * 3 + 1 * 2 + 1 * 1 }{10} =  55 / 10 = 5.5 $
 
     Results are similar if weighted estimator is used.
 
@@ -107,7 +121,7 @@
     \subsection*{Answer}
 
     Weightet importance-sampling initially produces biased estimations.
-    As the number of samples increases the bias disappears.
+    As the number of samples increases the bias disappears. It is explained when {\it weighted importance-sampling} was introduced.
 
     \subsection{Question}
 
@@ -116,6 +130,7 @@
     Would the variance of the estimator still be infinite? Why or why not?
 
     \subsection*{Answer}
+{\red No lo revisé con cuidado.}
 
     The only difference would be the added 1/k term to the sum.
     The variance would still be infinite.
@@ -201,7 +216,7 @@
     Consider driving a race car around a turn like those shown in Figure 5.5. You want to go as fast as possible, but not so fast as to run off the track.
 
     Apply a Monte Carlo control method to this task to compute the optimal policy from each starting state.
-    Exhibit several trajectories following the optimal policy (but turn the noise o↵ for these trajectories).
+    Exhibit several trajectories following the optimal policy (but turn the noise o for these trajectories).
 
     \subsection*{Answer}
 
