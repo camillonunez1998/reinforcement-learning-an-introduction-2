@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.13)  17 APR 2025 18:51
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.13)  13 MAY 2025 16:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**/Users/camilonunez/Desktop/Internship-2025/reinforcement-learning-an-introduction-2/chapter03/exercises3.tex
-(/Users/camilonunez/Desktop/Internship-2025/reinforcement-learning-an-introduction-2/chapter03/exercises3.tex
+**/Users/camilonunez/Desktop/Internship-2025/RL-solutions/chapter03/exercises3.tex
+(/Users/camilonunez/Desktop/Internship-2025/RL-solutions/chapter03/exercises3.tex
 LaTeX2e <2021-11-15> patch level 1
 L3 programming layer <2022-02-24> (/usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
@@ -172,14 +172,14 @@ Overfull \hbox (20.922pt too wide) in paragraph at lines 504--505
 [12] [13] (./exercises3.aux) ) 
 Here is how much of TeX's memory you used:
  2222 strings out of 478268
- 31619 string characters out of 5846346
+ 31535 string characters out of 5846346
  337038 words of memory out of 5000000
  20443 multiletter control sequences out of 15000+600000
  479665 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 54i,16n,62p,462b,285s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 54i,16n,62p,434b,285s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2022/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on exercises3.pdf (13 pages, 215965 bytes).
+Output written on exercises3.pdf (13 pages, 215854 bytes).
 PDF statistics:
  137 PDF objects out of 1000 (max. 8388607)
  85 compressed objects within 1 object stream

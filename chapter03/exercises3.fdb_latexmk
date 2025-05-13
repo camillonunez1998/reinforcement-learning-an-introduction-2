@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1744908707 "/Users/camilonunez/Desktop/Internship-2025/reinforcement-learning-an-introduction-2/chapter03/exercises3.tex" "exercises3.pdf" "exercises3" 1744908708
-  "/Users/camilonunez/Desktop/Internship-2025/reinforcement-learning-an-introduction-2/chapter03/exercises3.tex" 1744908707 21677 14d5143e02b9acd63a64b8372e306576 ""
+["pdflatex"] 1747145509 "/Users/camilonunez/Desktop/Internship-2025/RL-solutions/chapter03/exercises3.tex" "exercises3.pdf" "exercises3" 1747145510
+  "/Users/camilonunez/Desktop/Internship-2025/RL-solutions/chapter03/exercises3.tex" 1744908707 21677 14d5143e02b9acd63a64b8372e306576 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2022/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -68,7 +68,7 @@
   "/usr/local/texlive/2022/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1647878959 4410336 7d30a02e9fa9a16d7d1f8d037ba69641 ""
   "/usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1668334728 2826448 9021926499f6a884f42e3dd66ad1cf76 ""
   "/usr/local/texlive/2022/texmf.cnf" 1647878952 577 209b46be99c9075fd74d4c0369380e8c ""
-  "exercises3.aux" 1744908708 3204 612908ae2fa825ddb1cb1fb4385b2886 "pdflatex"
+  "exercises3.aux" 1747145510 3204 612908ae2fa825ddb1cb1fb4385b2886 "pdflatex"
   "exercises3.tex" 1744908707 21677 14d5143e02b9acd63a64b8372e306576 ""
   (generated)
   "exercises3.aux"

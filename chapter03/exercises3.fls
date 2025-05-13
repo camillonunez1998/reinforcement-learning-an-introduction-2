@@ -1,8 +1,8 @@
-PWD /Users/camilonunez/Desktop/Internship-2025/reinforcement-learning-an-introduction-2/chapter03
+PWD /Users/camilonunez/Desktop/Internship-2025/RL-solutions/chapter03
 INPUT /usr/local/texlive/2022/texmf.cnf
 INPUT /usr/local/texlive/2022/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2022/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /Users/camilonunez/Desktop/Internship-2025/reinforcement-learning-an-introduction-2/chapter03/exercises3.tex
+INPUT /Users/camilonunez/Desktop/Internship-2025/RL-solutions/chapter03/exercises3.tex
 OUTPUT exercises3.log
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2022/texmf-dist/tex/latex/base/article.cls
